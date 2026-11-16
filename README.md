@@ -31,5 +31,8 @@ Then open http://localhost:8000/.
 ## Adding a tasting or class
 Copy an `<li>` in the "Other tastings" list on `sake/index.html`. For a fuller entry, copy the `<article class="event">` block. Only list events that actually happened.
 
+## Adding a tasting note
+Copy the `<article class="note">` block in the "Tasting notes" section of `sake/index.html`. Export the photo to `assets/img/sake/note-<name>-600.webp` and `-1000.webp` (4:5), and add a row to `CREDITS.md`. If the note uses new Japanese characters, regenerate the Japanese font subset.
+
 ## The Dassai visit journal
-The three "Photograph to follow" plates in the Japan section are placeholders. After the visit, replace each `.plate` with a `<figure>` (see the notebook grid for the markup). If the journal grows beyond a few entries, consider moving it to its own pages, for example `/sake/journal/dassai/`.
+The three "Photograph to follow" plates in the Japan section are placeholders. After the visit, replace each `.plate` with a `<figure>` (see the tasting note for the markup). If the journal grows beyond a few entries, consider moving it to its own pages, for example `/sake/journal/dassai/`.

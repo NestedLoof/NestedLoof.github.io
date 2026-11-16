@@ -43,15 +43,11 @@ All photographs were supplied by Luther Williamson, who has confirmed he has per
 | `img/sake/hero-bottle-*` | `20260606_211106.jpg` | Single bottle, June 2026 | Luther Williamson | Owner |
 | `img/sake/wset-class-*` | `20250522_133500.jpg` | WSET tasting flight, May 2025 | Luther Williamson | Owner |
 | `img/sake/award-*` | `Apr_26-990.jpg` | Dassai Sake Prize presentation, April 2026 | Event photograph supplied by Luther | Permission confirmed by Luther |
-| `img/sake/certificate-*` | `20260427_184744.jpg` | Prize certificate | Luther Williamson | Owner |
 | `img/sake/class-presenting-*` | `Screenshot_20260328_103716_Instagram.jpg` | Luther presenting, March 2026 | Instagram story by a guest (@neilghall) | Permission confirmed by Luther |
 | `img/sake/class-group-*` | `Screenshot_20260328_104508_Instagram.jpg` | Group photo, March 2026 | Instagram story by Jennifer Yeung (@jenniferyeung94) | Permission confirmed by Luther |
 | `img/sake/class-table-*` | `IMG_20260328_102949_381.webp` | Tasting table, March 2026 | Instagram story image supplied by Luther | Permission confirmed by Luther |
 | `img/sake/tasting-sheet-*` | `20260326_172602.jpg` | Printed tasting sheet | Luther Williamson | Owner |
-| `img/sake/note-tamagawa-*` | `20260606_211312.jpg` | Back label, Tamagawa "Red Label" | Luther Williamson | Owner |
-| `img/sake/note-raifuku-*` | `20260322_132321.jpg` | Back label, Raifuku "Mellow" | Luther Williamson | Owner |
-| `img/sake/note-rice-hop-*` | `20251231_211328.jpg` | "Rice & Hop" bottle | Luther Williamson | Owner |
-| `img/sake/note-nigiri-*` | `20260206_203034.jpg` | Nigiri and sake | Luther Williamson | Owner |
+| `img/sake/note-tamagawa-*` | `20260606_211312.jpg` | Back label, Tamagawa "Red Label" (tasting note) | Luther Williamson | Owner |
 | `img/work/polygon-dungeon-*`, `img/work/hungry-bunny-*` | Previous site screenshots | Luther's own games | Luther Williamson | Owner |
 
 ### Deliberately not used
