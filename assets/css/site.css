@@ -232,6 +232,7 @@ a:hover .arrow { transform: translateX(4px); }
 }
 .link:hover { color: var(--shu-deep); text-decoration-color: currentColor; }
 .prose a { color: var(--shu); text-underline-offset: .2em; text-decoration-thickness: 1px; }
+.prose a.btn { color: var(--paper); text-decoration: none; }
 
 .link-arrow {
   display: inline-flex; align-items: center; gap: .6rem; font-weight: 500; font-size: .95rem;
@@ -452,9 +453,7 @@ figcaption .mono, .caption .mono { flex: none; color: var(--shu); font-size: .7r
 .label-panel__note { margin-top: auto; padding-top: 1.5rem; font-size: .82rem; color: var(--ink-soft); }
 
 .recognition__photos { margin-top: clamp(3rem, 6vw, 5rem); align-items: end; }
-.recognition__photos figure:first-child { grid-column: 1 / span 8; }
-.recognition__photos figure:last-child { grid-column: 10 / span 3; }
-@media (max-width: 899px) { .recognition__photos figure + figure { margin-top: 2rem; max-width: 20rem; } }
+.recognition__photos figure { grid-column: 1 / span 9; }
 
 /* Tastings */
 .tastings__head { grid-column: 1 / span 7; }
@@ -474,7 +473,7 @@ figcaption .mono, .caption .mono { flex: none; color: var(--shu); font-size: .7r
 .event-gallery figure:nth-child(1) { grid-column: 1 / span 7; }
 .event-gallery figure:nth-child(2) { grid-column: 8 / span 5; margin-top: 4rem; }
 .event-gallery figure:nth-child(3) { grid-column: 2 / span 5; }
-.event-gallery figure:nth-child(4) { grid-column: 7 / span 5; margin-top: -3rem; }
+.event-gallery figure:nth-child(4) { grid-column: 7 / span 5; margin-top: 2.5rem; }
 @media (max-width: 899px) {
   .event-gallery { grid-template-columns: 1fr 1fr; }
   .event-gallery figure:nth-child(n) { grid-column: auto; margin-top: 0; }
@@ -494,9 +493,22 @@ figcaption .mono, .caption .mono { flex: none; color: var(--shu); font-size: .7r
 @media (max-width: 479px) { .offer__topics ul { columns: 1; } }
 .upcoming { margin-top: 2rem; display: flex; gap: 1rem; align-items: baseline; font-size: .95rem; color: var(--ink-soft); border-top: 1px dashed var(--koji); padding-top: 1.25rem; }
 
-.notebook { margin-top: clamp(3.5rem, 7vw, 6rem); }
-.notebook__grid { margin-top: 2rem; display: grid; gap: var(--col-gap); grid-template-columns: repeat(4, minmax(0, 1fr)); }
-@media (max-width: 899px) { .notebook__grid { grid-template-columns: 1fr 1fr; } }
+/* Tasting notes */
+.note { margin-top: clamp(3rem, 6vw, 5rem); align-items: center; }
+.note__media { grid-column: 1 / span 4; }
+.note__text { grid-column: 6 / span 7; }
+@media (max-width: 899px) { .note__media { max-width: 22rem; } .note__text { margin-top: 2rem; } }
+.note__meta { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; }
+.note__meta span:first-child { color: var(--shu); }
+.note h3 { margin-top: 1rem; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.08; }
+.note__brewery { margin-top: .6rem; color: var(--sugi); font-size: .95rem; }
+.note__quote {
+  margin: 2rem 0 0; padding-left: 1.5rem; border-left: 2px solid var(--shu);
+  font-family: var(--serif); font-style: italic; font-weight: 330; font-size: clamp(1.5rem, 2.6vw, 2.1rem); line-height: 1.25;
+}
+.note__aside { margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); font-size: .92rem; color: var(--ink-soft); max-width: 34rem; }
+.note__aside [lang="ja"] { color: var(--ink); margin-right: .35rem; }
+.note__aside b { color: var(--ink); font-weight: 500; }
 
 /* Japan */
 .japan { background: var(--paper-raised); border-block: 1px solid var(--rule); }
@@ -521,27 +533,11 @@ figcaption .mono, .caption .mono { flex: none; color: var(--shu); font-size: .7r
 .journal__grid { margin-top: 2rem; display: grid; gap: var(--col-gap); grid-template-columns: repeat(3, minmax(0, 1fr)); }
 @media (max-width: 759px) { .journal__grid { grid-template-columns: 1fr 1fr; } .journal__grid > :last-child { display: none; } }
 
-/* Interests */
-.interests__head { grid-column: 1 / span 7; }
-.interests__grid { margin-top: clamp(2.5rem, 5vw, 4rem); display: grid; grid-template-columns: 1fr; border-top: 1px solid var(--ink); }
-.interest { padding: 1.75rem 1.75rem 2rem 0; border-bottom: 1px solid var(--rule); }
-@media (min-width: 600px) and (max-width: 1099px) {
-  .interests__grid { grid-template-columns: 1fr 1fr; }
-  .interest:nth-child(even) { border-left: 1px solid var(--rule); padding-left: 1.5rem; }
-}
-@media (min-width: 1100px) {
-  .interests__grid { grid-template-columns: repeat(4, 1fr); }
-  .interest { border-bottom: 0; }
-  .interest + .interest { border-left: 1px solid var(--rule); padding-left: 1.5rem; }
-}
-.interest .mono { color: var(--shu); }
-.interest h3 { margin-top: 1rem; font-size: 1.5rem; }
-.interest p { margin-top: .75rem; font-size: .95rem; color: var(--ink-soft); }
-.interest--future .mono { color: var(--sugi); }
-.disclaimer {
-  margin-top: 2.5rem; max-width: 46rem; display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;
-  font-size: .95rem; color: var(--ink); border-left: 2px solid var(--shu); padding: .25rem 0 .25rem 1.25rem;
-}
+/* Producers & the UK */
+.uk__head { grid-column: 1 / span 6; }
+.uk__body { grid-column: 8 / span 5; align-self: end; }
+.uk__body .lede { color: var(--ink); }
+@media (max-width: 899px) { .uk__body { margin-top: 2rem; } }
 
 .seal-signoff { display: flex; justify-content: center; padding-block: clamp(3rem, 6vw, 5rem) 0; }
 .seal-signoff img { width: 3.25rem; height: 3.25rem; }
@@ -598,4 +594,9 @@ figcaption .mono, .caption .mono { flex: none; color: var(--shu); font-size: .7r
   .site-header, .nav-toggle, .chapters, .skip-link { display: none !important; }
   body { background: #fff; }
   .band-night, .contact, .site-footer { background: #fff; color: #000; }
+}
+
+/* Facts strip: three entries; on small screens the sake entry spans the full width */
+@media (max-width: 899px) {
+  .facts > div:nth-child(3) { grid-column: 1 / -1; border-left: 0; padding-left: 0; }
 }
