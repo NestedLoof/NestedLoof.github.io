@@ -1,0 +1,71 @@
+/* lutherwilliamson.co.uk — small progressive enhancements. Original code, no dependencies. */
+(function () {
+  "use strict";
+  var root = document.documentElement;
+  root.classList.remove("no-js");
+  root.classList.add("js");
+
+  // Mobile navigation toggle
+  var toggle = document.querySelector(".nav-toggle");
+  var nav = document.getElementById("site-nav");
+  if (toggle && nav) {
+    var setOpen = function (open) {
+      toggle.setAttribute("aria-expanded", String(open));
+      nav.classList.toggle("is-open", open);
+    };
+    toggle.addEventListener("click", function () {
+      setOpen(toggle.getAttribute("aria-expanded") !== "true");
+    });
+    nav.addEventListener("click", function (e) {
+      if (e.target.closest("a")) setOpen(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && nav.classList.contains("is-open")) { setOpen(false); toggle.focus(); }
+    });
+  }
+
+  // Header hairline once the page has scrolled
+  var header = document.querySelector(".site-header");
+  if (header) {
+    var onScroll = function () { header.classList.toggle("is-scrolled", window.scrollY > 8); };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  // Enlarge images in a native <dialog>; links still open the image without JS
+  var links = document.querySelectorAll("a[data-zoom]");
+  if (links.length && typeof HTMLDialogElement === "function") {
+    var dialog = document.createElement("dialog");
+    dialog.className = "lightbox";
+    dialog.innerHTML = '<button class="lightbox__close" type="button">Close</button><img alt=""><p></p>';
+    document.body.appendChild(dialog);
+    var img = dialog.querySelector("img");
+    var cap = dialog.querySelector("p");
+    dialog.querySelector("button").addEventListener("click", function () { dialog.close(); });
+    dialog.addEventListener("click", function (e) { if (e.target === dialog) dialog.close(); });
+    Array.prototype.forEach.call(links, function (a) {
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        var thumb = a.querySelector("img");
+        img.src = a.getAttribute("href");
+        img.alt = thumb ? thumb.alt : "";
+        cap.textContent = a.getAttribute("data-caption") || "";
+        dialog.showModal();
+      });
+    });
+  }
+
+  // Gentle reveal for section headings (skipped when reduced motion is preferred)
+  var reveals = document.querySelectorAll(".reveal");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reveals.length && "IntersectionObserver" in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add("is-in"); io.unobserve(entry.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    Array.prototype.forEach.call(reveals, function (el) { io.observe(el); });
+  } else {
+    Array.prototype.forEach.call(reveals, function (el) { el.classList.add("is-in"); });
+  }
+})();
