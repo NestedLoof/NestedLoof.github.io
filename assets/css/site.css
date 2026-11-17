@@ -406,6 +406,8 @@ figcaption .mono, .caption .mono { flex: none; color: var(--shu); font-size: .7r
 .games .work-intro p.muted { color: var(--g-soft); }
 .games .sec-num, .games .mono { color: var(--g-soft); }
 .games .sec-num span:first-child { color: var(--koji); }
+.games .eyebrow { color: var(--koji); margin-bottom: 1.75rem; }
+.page-games .contact .eyebrow { color: var(--shu-light); margin-bottom: 1.75rem; }
 .games .project__meta span:first-child { color: var(--koji); }
 /* Screenshots framed like a 3D viewport: dark bezel with corner marks */
 .games .mat {
