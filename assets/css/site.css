@@ -582,9 +582,6 @@ figcaption .mono, .caption .mono { flex: none; color: var(--shu); font-size: .7r
 .chapters a::after { content: ""; position: absolute; left: 0; right: 1.25rem; bottom: -1px; height: 2px; background: var(--shu); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
 .chapters a[aria-current]::after { transform: scaleX(1); }
 html:has(.chapters) { scroll-padding-top: calc(var(--header-h) + 4.25rem); }
-  .chapters li { border-bottom: 1px solid var(--rule); }
-  .chapters li:nth-last-child(-n+2) { border-bottom: 0; }
-}
 
 /* Introduction */
 .intro__text { grid-column: 1 / span 6; }
