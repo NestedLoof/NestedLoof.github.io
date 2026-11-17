@@ -138,15 +138,13 @@ h1 em, h2 em, h3 em { font-style: italic; font-weight: 330; }
 .muted { color: var(--ink-soft); }
 .small { font-size: .9rem; line-height: 1.55; }
 
-/* Section heading: "02 ——— Work" */
+/* Section label above a heading, e.g. "Games" */
 .sec-num {
   display: flex; align-items: center; gap: .9rem;
   font-family: var(--mono); font-size: .75rem; letter-spacing: .16em; text-transform: uppercase;
   color: var(--ink-soft); margin-bottom: 1.75rem;
 }
 .sec-num span:first-child { color: var(--shu); }
-.sec-num::after { content: ""; flex: 0 0 3.5rem; height: 1px; background: currentColor; opacity: .5; order: 1; }
-.sec-num span:last-child { order: 2; }
 
 /* Vertical Japanese label */
 .tate {
@@ -346,6 +344,8 @@ figcaption .mono, .caption .mono { flex: none; color: var(--shu); font-size: .7r
 .feature__index li:nth-child(odd) a { margin-right: 1.25rem; }
 .feature__index a:hover { color: var(--shu-light); }
 .feature__index .mono { color: var(--night-soft); font-size: .68rem; }
+.feature__index .arrow { color: var(--night-soft); }
+.games .feature__index .arrow { color: var(--koji); }
 .band-night .link-arrow { color: var(--paper); }
 @media (max-width: 899px) {
   .feature__media { max-width: 26rem; margin-bottom: 3rem; }
@@ -406,8 +406,6 @@ figcaption .mono, .caption .mono { flex: none; color: var(--shu); font-size: .7r
 .games .work-intro p.muted { color: var(--g-soft); }
 .games .sec-num, .games .mono { color: var(--g-soft); }
 .games .sec-num span:first-child { color: var(--koji); }
-.games .eyebrow { color: var(--koji); margin-bottom: 1.75rem; }
-.page-games .contact .eyebrow { color: var(--shu-light); margin-bottom: 1.75rem; }
 .games .project__meta span:first-child { color: var(--koji); }
 /* Screenshots framed like a 3D viewport: dark bezel with corner marks */
 .games .mat {
