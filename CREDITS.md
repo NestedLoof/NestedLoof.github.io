@@ -51,6 +51,7 @@ All photographs were supplied by Luther Williamson, who has confirmed he has per
 | `img/sake/tasting-sheet-*` | `20260326_172602.jpg` | Printed tasting sheet | Luther Williamson | Owner |
 | `img/sake/note-tamagawa-*` | `20260606_211312.jpg` | Back label, Tamagawa "Red Label" (tasting note) | Luther Williamson | Owner |
 | `img/work/polygon-dungeon-*`, `img/work/hungry-bunny-*` | Previous site screenshots | Luther's own games | Luther Williamson | Owner |
+| `img/work/offbeat-party-*`, `img/work/offbeat-title-*` | Gameplay screenshots supplied Nov 2026 | Offbeat (Global Game Jam 2026). Art by parkpon and ViliS | Supplied by Luther | Luther confirmed he owns the itch.io page images and may use them |
 
 ### Deliberately not used
 - The **WSET results letter** and qualification certificate. They contain candidate numbers, and WSET asks that certificates not be reproduced.
