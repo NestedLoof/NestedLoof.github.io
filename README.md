@@ -40,3 +40,6 @@ After the visit, add photographs to the Japan section as `<figure>` elements (se
 
 ## Search Console
 `googlea2066997de2fe5dd.html` at the repository root verifies the site with Google Search Console. Leave it in place, or verification will lapse.
+
+## Visitor statistics
+Every page loads GoatCounter just before `</body>` (dashboard: https://woffus.goatcounter.com). Add the same snippet to any new page. GoatCounter ignores visits from `localhost`, so local previews aren't counted.

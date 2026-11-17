@@ -7,7 +7,8 @@ Every file that ships with this site is listed here, with where it came from and
 | Item | Source | Licence |
 |---|---|---|
 | `assets/css/site.css`, `assets/js/site.js`, all HTML | Written for this site (2026) | © Luther Williamson |
-| Third-party libraries | **None.** No frameworks, CDNs, analytics or trackers. | — |
+| Third-party libraries | **None.** No frameworks or CDNs. | — |
+| Visitor statistics | GoatCounter (`gc.zgo.at/count.js`, account `woffus`), loaded on every page. Counts page views without cookies or personal data, so no cookie banner is needed. | GoatCounter terms |
 | YouTube embeds (`/games/`) | Luther's own videos from youtube.com/@LutherDev. Thumbnails load from `i.ytimg.com`; the player (`youtube-nocookie.com`) loads only when a visitor clicks play. | © Luther Williamson |
 
 The previous site was built on the "Virtual Folio" template by MACode ID (CC BY 4.0). All template code, styles, scripts, icon fonts and stock images were removed in the 2026 redesign. Nothing from the template remains, so its attribution notice was removed as well.
