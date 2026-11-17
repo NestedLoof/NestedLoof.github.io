@@ -52,6 +52,16 @@
     });
   });
 
+  // Open a collapsed <details> when a link points at something inside it
+  var openTarget = function () {
+    var id = decodeURIComponent(location.hash.slice(1));
+    var el = id && document.getElementById(id);
+    var d = el && el.closest("details");
+    if (d && !d.open) { d.open = true; el.scrollIntoView(); }
+  };
+  window.addEventListener("hashchange", openTarget);
+  openTarget();
+
   // Enlarge images in a native <dialog>; links still open the image without JS
   var links = document.querySelectorAll("a[data-zoom]");
   if (links.length && typeof HTMLDialogElement === "function") {
