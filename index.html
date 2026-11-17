@@ -48,7 +48,7 @@
     "award": "Dassai Sake Prize (2026)",
     "knowsAbout": ["Japanese sake", "Game development", "Unreal Engine", "C++", "3D modelling", "Physics"],
     "email": "mailto:LutherAWilliamson@gmail.com",
-    "sameAs": ["https://www.linkedin.com/in/luther-williamson/", "https://github.com/NestedLoof"]
+    "sameAs": ["https://www.linkedin.com/in/luther-williamson/", "https://github.com/NestedLoof", "https://www.youtube.com/@LutherDev"]
   }
   </script>
 </head>
@@ -66,10 +66,10 @@
       </button>
       <nav class="site-nav" id="site-nav" aria-label="Main">
         <ul>
-          <li><a class="nav-sake" href="/sake/">Sake</a></li>
-          <li><a href="/#games">Games</a></li>
+          <li><a href="/games/">Games</a></li>
+          <li><a href="/sake/">Sake</a></li>
           <li><a href="/#about">About</a></li>
-          <li><a href="/#contact">Contact</a></li>
+          <li><a class="nav-contact" href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -86,7 +86,7 @@
         <p class="hero__body">Indie game developer and freelance 3D modeller, formerly a software engineer in medical software, with a Master’s in Physics from the University of Oxford. I hold the WSET Level 3 Award in Sake and won the 2026 Dassai Sake Prize.</p>
         <div class="hero__actions">
           <a class="btn" href="/sake/">Explore sake <span class="arrow" aria-hidden="true">→</span></a>
-          <a class="link-arrow" href="#games">See my games <span class="arrow" aria-hidden="true">↓</span></a>
+          <a class="link-arrow" href="/games/">See my games <span class="arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
       <figure class="hero__figure">
@@ -131,7 +131,7 @@
           </div>
         </figure>
         <div class="feature__text">
-          <p class="sec-num reveal"><span>01</span><span>Japanese sake</span></p>
+          <p class="sec-num reveal"><span>Japanese sake</span></p>
           <h2 id="sake-feature-title" class="reveal">Sake, studied closely and shared&nbsp;generously.</h2>
           <p class="lede">Sake is where my curiosity about science, craft and food meets.</p>
           <p>I took the WSET Level 3 Award in Sake, passing with Distinction, and was one of the two highest-scoring students worldwide, which led to my being awarded the Dassai Sake Prize, including a bursary to visit the Dassai brewery in Yamaguchi, Japan. I’ve since taught sake classes and led tastings in the UK.</p>
@@ -139,95 +139,47 @@
             <a class="btn btn--shu" href="/sake/">Enter the sake section <span class="arrow" aria-hidden="true">→</span></a>
           </div>
           <ul class="feature__index" aria-label="Inside the sake section">
-            <li><a href="/sake/#recognition"><span>Recognition</span><span class="mono">02</span></a></li>
-            <li><a href="/sake/#tastings"><span>Classes &amp; tastings</span><span class="mono">03</span></a></li>
-            <li><a href="/sake/#tasting-notes"><span>Tasting notes</span><span class="mono">04</span></a></li>
-            <li><a href="/sake/#japan"><span>Japan &amp; Dassai</span><span class="mono">05</span></a></li>
+            <li><a href="/sake/#recognition"><span>Recognition</span><span class="arrow" aria-hidden="true">→</span></a></li>
+            <li><a href="/sake/#tastings"><span>Classes &amp; tastings</span><span class="arrow" aria-hidden="true">→</span></a></li>
+            <li><a href="/sake/#tasting-notes"><span>Tasting notes</span><span class="arrow" aria-hidden="true">→</span></a></li>
+            <li><a href="/sake/#japan"><span>Japan &amp; Dassai</span><span class="arrow" aria-hidden="true">→</span></a></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Games -->
-    <section class="section wrap" id="games" aria-labelledby="games-title">
-      <div class="grid">
-        <div class="work-intro">
-          <p class="sec-num reveal"><span>02</span><span>Games</span></p>
+    <!-- Games feature -->
+    <section class="games games-teaser" id="games" aria-labelledby="games-title">
+      <div class="wrap grid">
+        <div class="teaser__text">
+          <p class="sec-num reveal"><span>Games</span></p>
           <h2 id="games-title" class="reveal">Games, 3D and software.</h2>
-          <p class="muted">Since leaving medical software in late 2023 I’ve worked independently, as an indie game developer and a freelance 3D modeller for product design. Selected projects:</p>
+          <p class="lede">Since late 2023 I’ve worked independently, as an indie game developer and a freelance 3D modeller for product design.</p>
+          <div class="feature__links">
+            <a class="btn btn--koji" href="/games/">See my games <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+          <ul class="feature__index" aria-label="On the games page">
+            <li><a href="/games/#death-with-dice"><span>Death with Dice</span><span class="mono">Upcoming</span></a></li>
+            <li><a href="/games/#hive-mind"><span>Hive Mind</span><span class="mono">2027</span></a></li>
+            <li><a href="/games/#offbeat"><span>Offbeat</span><span class="mono">Game jam</span></a></li>
+            <li><a href="/games/#youtube"><span>YouTube</span><span class="mono">Tutorials</span></a></li>
+          </ul>
         </div>
+        <a class="teaser__media mat" href="/games/" aria-label="Games page">
+          <span class="ratio ratio--16x9">
+            <img src="/assets/img/work/polygon-dungeon-800.webp"
+                 srcset="/assets/img/work/polygon-dungeon-800.webp 800w, /assets/img/work/polygon-dungeon-1600.webp 1600w"
+                 sizes="(min-width: 900px) 50vw, 92vw" width="1600" height="900" loading="lazy" alt="">
+          </span>
+        </a>
       </div>
-
-      <article class="project grid">
-        <div class="project__media">
-          <a class="zoom mat" href="/assets/img/work/polygon-dungeon-1600.webp" data-zoom data-caption="Polygon Dungeon — Unreal Engine 5">
-            <div class="ratio ratio--16x9">
-              <img src="/assets/img/work/polygon-dungeon-800.webp"
-                   srcset="/assets/img/work/polygon-dungeon-800.webp 800w, /assets/img/work/polygon-dungeon-1600.webp 1600w"
-                   sizes="(min-width: 900px) 55vw, 92vw" width="1600" height="900" loading="lazy"
-                   alt="Screenshot of Polygon Dungeon: a sword-wielding character fighting an enemy in a low-poly stone dungeon.">
-            </div>
-          </a>
-        </div>
-        <div class="project__text">
-          <p class="project__meta mono"><span>Game</span><span>Apr 2024</span><span>1 week</span></p>
-          <h3>Polygon Dungeon</h3>
-          <p>An action game built in a week, with a sword-combo combat system, AI enemies, health and inventory systems, wieldable weapons and interactable items.</p>
-          <ul class="tags" aria-label="Tools"><li>Unreal Engine 5</li><li>Blueprints</li><li>C++</li><li>AI</li><li>Level design</li></ul>
-        </div>
-      </article>
-
-      <article class="project project--flip grid">
-        <div class="project__media">
-          <a class="zoom mat" href="/assets/img/work/hungry-bunny-1600.webp" data-zoom data-caption="Hungry Bunny — C++ and PlayBuffer">
-            <div class="ratio ratio--16x9">
-              <img src="/assets/img/work/hungry-bunny-800.webp"
-                   srcset="/assets/img/work/hungry-bunny-800.webp 800w, /assets/img/work/hungry-bunny-1600.webp 1600w"
-                   sizes="(min-width: 900px) 55vw, 92vw" width="1600" height="921" loading="lazy"
-                   alt="Screenshot of Hungry Bunny: a top-down pixel-art farm with vegetable plots, a rabbit and a score counter.">
-            </div>
-          </a>
-        </div>
-        <div class="project__text">
-          <p class="project__meta mono"><span>Game</span><span>Mar 2024</span><span>2 weeks</span></p>
-          <h3>Hungry Bunny</h3>
-          <p>A 2D top-down arcade game: eat carrots to survive while avoiding angry farmers.</p>
-          <ul class="tags" aria-label="Tools"><li>C++</li><li>PlayBuffer</li><li>GitHub</li></ul>
-        </div>
-      </article>
-
-      <ul class="ledger-list" aria-label="More projects">
-        <li>
-          <p class="l-when mono">Apr 2024</p>
-          <h3 class="l-title">Enchanted Forest</h3>
-          <div class="l-desc">A fantasy environment built in Unreal Engine 5: realistic landscapes, complex materials, procedural content, and atmospheric lighting, fog and rain.
-            <ul class="tags" aria-label="Tools"><li>Unreal Engine 5</li><li>Blueprints</li><li>PCG</li></ul></div>
-        </li>
-        <li>
-          <p class="l-when mono">Mar 2024</p>
-          <h3 class="l-title">Food Fight</h3>
-          <div class="l-desc">A whimsical text adventure: explore a restaurant and battle chefs to present the tastiest food.
-            <ul class="tags" aria-label="Tools"><li>C++</li></ul></div>
-        </li>
-        <li>
-          <p class="l-when mono">2024 – now</p>
-          <h3 class="l-title">Freelance 3D modelling</h3>
-          <div class="l-desc">3D modelling for product design clients.</div>
-        </li>
-        <li>
-          <p class="l-when mono">2021 – 2023</p>
-          <h3 class="l-title">Medical software</h3>
-          <div class="l-desc">Full-stack software engineering at The Phoenix Partnership (TPP), working on large projects in an agile team.</div>
-        </li>
-      </ul>
     </section>
 
     <!-- About -->
     <section class="section wrap" id="about" aria-labelledby="about-title">
-      <hr class="rule" style="margin-bottom:var(--section)">
       <div class="grid">
         <div class="about__text">
-          <p class="sec-num reveal"><span>03</span><span>About</span></p>
+          <p class="sec-num reveal"><span>About</span></p>
           <h2 id="about-title" class="reveal">A physicist turned game developer, with a serious interest in sake.</h2>
           <div class="prose">
             <p>I’m Luther, based in Leeds. I studied Physics at the University of Oxford, specialising in quantum computing, then spent nearly three years as a full-stack software engineer at The Phoenix Partnership, a medical software company.</p>
@@ -281,7 +233,7 @@
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <div class="wrap grid">
         <div class="contact__head">
-          <p class="sec-num reveal"><span>04</span><span>Contact</span></p>
+          <p class="sec-num reveal"><span>Contact</span></p>
           <h2 id="contact-title" class="reveal">Get in touch.</h2>
           <p>About games and 3D work, sake classes and tastings, or a conversation about sake in the UK. I’m always happy to hear from people.</p>
         </div>
@@ -290,6 +242,7 @@
           <li><a href="https://www.linkedin.com/in/luther-williamson/" rel="me noopener"><span class="mono">LinkedIn</span><span class="val">luther-williamson</span><span class="arrow" aria-hidden="true">↗</span></a></li>
           <li><a href="https://line.me/ti/p/mmM6-aKMvG" rel="noopener"><span class="mono">LINE</span><span class="val">Add me on LINE</span><span class="arrow" aria-hidden="true">↗</span></a></li>
           <li><a href="https://wa.me/447392831666" rel="noopener"><span class="mono">WhatsApp</span><span class="val">Message me on WhatsApp</span><span class="arrow" aria-hidden="true">↗</span></a></li>
+          <li><a href="https://www.youtube.com/@LutherDev" rel="me noopener"><span class="mono">YouTube</span><span class="val">LutherDev</span><span class="arrow" aria-hidden="true">↗</span></a></li>
           <li><a href="https://github.com/NestedLoof" rel="me noopener"><span class="mono">GitHub</span><span class="val">NestedLoof</span><span class="arrow" aria-hidden="true">↗</span></a></li>
         </ul>
       </div>
@@ -301,10 +254,11 @@
       <p class="site-footer__brand"><img src="/assets/img/brand/seal.svg" alt="" width="26" height="26"> © 2026 Luther Williamson · Leeds, UK</p>
       <nav aria-label="Footer">
         <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/games/">Games</a></li>
           <li><a href="/sake/">Sake</a></li>
-          <li><a href="/#games">Games</a></li>
           <li><a href="/#about">About</a></li>
-          <li><a href="/#contact">Contact</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>

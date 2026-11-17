@@ -8,6 +8,7 @@ Every file that ships with this site is listed here, with where it came from and
 |---|---|---|
 | `assets/css/site.css`, `assets/js/site.js`, all HTML | Written for this site (2026) | © Luther Williamson |
 | Third-party libraries | **None.** No frameworks, CDNs, analytics or trackers. | — |
+| YouTube embeds (`/games/`) | Luther's own videos from youtube.com/@LutherDev. Thumbnails load from `i.ytimg.com`; the player (`youtube-nocookie.com`) loads only when a visitor clicks play. | © Luther Williamson |
 
 The previous site was built on the "Virtual Folio" template by MACode ID (CC BY 4.0). All template code, styles, scripts, icon fonts and stock images were removed in the 2026 redesign. Nothing from the template remains, so its attribution notice was removed as well.
 
@@ -30,6 +31,7 @@ The licence texts are in `assets/fonts/OFL-*.txt`.
 |---|---|---|
 | `assets/img/brand/seal.svg`, `assets/favicon.svg`, `assets/favicon.ico`, `assets/apple-touch-icon.png` | Drawn for this site. The ルーサー glyph outlines come from Shippori Mincho B1 Bold (OFL 1.1, which allows embedding glyph outlines in artwork). | © Luther Williamson |
 | `assets/img/brand/rings.svg` | Drawn for this site | © Luther Williamson |
+| `assets/img/brand/lowpoly.svg` | Generated for this site (low-poly wireframe background for the Games section) | © Luther Williamson |
 | `assets/img/og/home.jpg`, `assets/img/og/sake.jpg` | Composed for this site from the photographs below and the fonts above | © Luther Williamson |
 
 ## Photographs
@@ -49,6 +51,7 @@ All photographs were supplied by Luther Williamson, who has confirmed he has per
 | `img/sake/tasting-sheet-*` | `20260326_172602.jpg` | Printed tasting sheet | Luther Williamson | Owner |
 | `img/sake/note-tamagawa-*` | `20260606_211312.jpg` | Back label, Tamagawa "Red Label" (tasting note) | Luther Williamson | Owner |
 | `img/work/polygon-dungeon-*`, `img/work/hungry-bunny-*` | Previous site screenshots | Luther's own games | Luther Williamson | Owner |
+| `img/work/offbeat-party-*`, `img/work/offbeat-title-*` | Gameplay screenshots supplied Nov 2026 | Offbeat (Global Game Jam 2026). Art by parkpon and ViliS | Supplied by Luther | Luther confirmed he owns the itch.io page images and may use them |
 
 ### Deliberately not used
 - The **WSET results letter** and qualification certificate. They contain candidate numbers, and WSET asks that certificates not be reproduced.
