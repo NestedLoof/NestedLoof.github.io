@@ -97,7 +97,7 @@ ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
 :focus-visible { outline: 2px solid var(--shu); outline-offset: 3px; border-radius: 2px; }
 ::selection { background: var(--shu); color: var(--paper); }
 
-[lang="ja"] { font-family: var(--ja); font-feature-settings: "palt" 1; letter-spacing: 0.04em; line-break: strict; word-break: auto-phrase; }
+[lang="ja"], [lang="zh-Hant"] { font-family: var(--ja); font-feature-settings: "palt" 1; letter-spacing: 0.04em; line-break: strict; word-break: auto-phrase; }
 
 .visually-hidden {
   position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
@@ -283,19 +283,12 @@ figcaption .mono, .caption .mono { flex: none; color: var(--shu); font-size: .7r
 .ratio--16x9 { aspect-ratio: 16 / 9; }
 
 /* Placeholder plate: designed empty state, never a fake photo */
-.plate {
-  position: relative; display: grid; place-items: center; aspect-ratio: 4 / 5;
-  background: var(--paper-raised) url("/assets/img/brand/rings.svg") center / 62% no-repeat;
-  box-shadow: inset 0 0 0 1px var(--rule);
-  text-align: center; padding: 1.25rem;
-}
-.plate__label { position: absolute; left: 1rem; right: 1rem; bottom: 1rem; font-family: var(--mono); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
-.plate__title { font-family: var(--serif); font-size: 1.2rem; color: var(--sugi); background: var(--paper-raised); padding: .2rem .5rem; }
 
 /* 9. Home ----------------------------------------------------------------- */
 .hero { padding-top: clamp(3rem, 8vw, 7rem); padding-bottom: clamp(3.5rem, 7vw, 6rem); }
 .hero__text { grid-column: 1 / span 7; align-self: end; }
 .hero__ja { margin-top: 1.25rem; font-size: 1.05rem; color: var(--sugi); }
+.hero__sep { margin-inline: .75em; color: var(--koji); }
 .hero .lede { margin-top: clamp(1.75rem, 3.5vw, 2.75rem); max-width: 22ch; }
 .hero__body { margin-top: 1.4rem; max-width: 34rem; color: var(--ink-soft); }
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem 2rem; margin-top: 2.25rem; }
@@ -657,7 +650,6 @@ html:has(.chapters) { scroll-padding-top: calc(var(--header-h) + 4.25rem); }
 .offer__cta { margin-top: 2rem; }
 @media (max-width: 899px) { .offer__topics { margin-top: 2rem; } }
 @media (max-width: 479px) { .offer__topics ul { columns: 1; } }
-.upcoming { margin-top: 2rem; display: flex; gap: 1rem; align-items: baseline; font-size: .95rem; color: var(--ink-soft); border-top: 1px dashed var(--koji); padding-top: 1.25rem; }
 
 /* Tasting notes */
 .note { margin-top: clamp(3rem, 6vw, 5rem); align-items: center; }
@@ -678,6 +670,7 @@ html:has(.chapters) { scroll-padding-top: calc(var(--header-h) + 4.25rem); }
 
 /* Japan */
 .japan { background: var(--paper-raised); border-block: 1px solid var(--rule); }
+.japan + .section { padding-top: var(--section); }
 .japan__text { grid-column: 1 / span 6; }
 .status {
   display: inline-flex; align-items: center; gap: .6rem; font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase;
@@ -693,11 +686,6 @@ html:has(.chapters) { scroll-padding-top: calc(var(--header-h) + 4.25rem); }
 .hopes li { counter-increment: h; display: grid; grid-template-columns: 2.25rem 1fr; padding-block: .85rem; border-bottom: 1px solid var(--rule); font-size: .98rem; }
 .hopes li::before { content: counter(h, decimal-leading-zero); font-family: var(--mono); font-size: .72rem; color: var(--shu); padding-top: .25rem; }
 @media (max-width: 899px) { .japan__aside { margin-top: 3rem; } }
-.journal { margin-top: clamp(3.5rem, 7vw, 5.5rem); }
-.journal__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--ink); padding-bottom: 1rem; }
-.journal__head h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); }
-.journal__grid { margin-top: 2rem; display: grid; gap: var(--col-gap); grid-template-columns: repeat(3, minmax(0, 1fr)); }
-@media (max-width: 759px) { .journal__grid { grid-template-columns: 1fr 1fr; } .journal__grid > :last-child { display: none; } }
 
 /* Producers & the UK */
 .uk__head { grid-column: 1 / span 6; }
