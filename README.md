@@ -37,3 +37,6 @@ Copy the `<article class="note">` block in the "Tasting notes" section of `sake/
 
 ## The Dassai visit
 After the visit, add photographs to the Japan section as `<figure>` elements (see the tasting note for the markup), and change the "Upcoming" status line. If it grows beyond a few entries, consider giving it its own page, for example `/sake/dassai/`.
+
+## Search Console
+`googlea2066997de2fe5dd.html` at the repository root verifies the site with Google Search Console. Leave it in place, or verification will lapse.
