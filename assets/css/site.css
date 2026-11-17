@@ -498,6 +498,28 @@ figcaption .mono, .caption .mono { flex: none; color: var(--shu); font-size: .7r
 .channel__list a:hover { color: var(--koji); }
 @media (max-width: 899px) { .channel__media { margin-top: 2.5rem; } }
 
+/* Earlier projects: collapsed by default */
+.earlier { margin-top: clamp(4rem, 8vw, 6rem); border-top: 1px solid var(--koji); border-bottom: 1px solid rgba(245,240,230,.14); }
+.earlier summary {
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: .35rem 1.5rem;
+  padding-block: 1.6rem; cursor: pointer; list-style: none;
+}
+.earlier summary::-webkit-details-marker { display: none; }
+.earlier__label { font-family: var(--serif); font-size: clamp(1.5rem, 2.4vw, 2rem); color: var(--g-text); }
+.earlier__hint { grid-column: 1; font-size: .68rem; }
+.earlier__icon { grid-column: 2; grid-row: 1 / span 2; position: relative; width: 2.75rem; height: 2.75rem; border: 1px solid var(--koji); border-radius: 50%; transition: background .2s; }
+.earlier__icon::before, .earlier__icon::after { content: ""; position: absolute; left: 50%; top: 50%; width: .9rem; height: 1px; background: var(--koji); transform: translate(-50%, -50%); transition: transform .25s ease, background .2s; }
+.earlier__icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+.earlier[open] .earlier__icon::after { transform: translate(-50%, -50%) rotate(0deg); }
+.earlier summary:hover .earlier__icon { background: var(--koji); }
+.earlier summary:hover .earlier__icon::before, .earlier summary:hover .earlier__icon::after { background: var(--ink); }
+.earlier summary:hover .earlier__label { color: var(--koji); }
+.earlier summary:focus-visible { outline: 2px solid var(--koji); outline-offset: 4px; }
+.earlier__body { padding-bottom: clamp(2.5rem, 5vw, 4rem); }
+.earlier__body > .project:first-child { margin-top: 1rem; }
+.ledger-list--earlier { margin-top: clamp(3rem, 6vw, 4.5rem); }
+.earlier[id], .project[id] { scroll-margin-top: calc(var(--header-h) + 1.5rem); }
+
 /* About */
 .about__text { grid-column: 1 / span 5; }
 .about__text .prose { margin-top: 1.75rem; }
