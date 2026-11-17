@@ -32,6 +32,26 @@
     onScroll();
   }
 
+  // YouTube: show a thumbnail and load the (no-cookie) player only when clicked
+  Array.prototype.forEach.call(document.querySelectorAll("a[data-yt]"), function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var frame = document.createElement("iframe");
+      frame.src = "https://www.youtube-nocookie.com/embed/" + a.getAttribute("data-yt") + "?autoplay=1&rel=0";
+      frame.title = a.getAttribute("aria-label") || "YouTube video";
+      frame.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+      frame.allowFullscreen = true;
+      var box = a.querySelector(".ratio");
+      box.innerHTML = "";
+      box.appendChild(frame);
+      var holder = document.createElement("div");
+      holder.className = a.className;
+      holder.appendChild(box);
+      a.replaceWith(holder);
+      frame.focus();
+    });
+  });
+
   // Enlarge images in a native <dialog>; links still open the image without JS
   var links = document.querySelectorAll("a[data-zoom]");
   if (links.length && typeof HTMLDialogElement === "function") {
