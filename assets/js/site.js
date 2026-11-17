@@ -62,6 +62,36 @@
   window.addEventListener("hashchange", openTarget);
   openTarget();
 
+  // "On this page" bar: mark the section in view and keep its link visible
+  var bar = document.querySelector(".chapters ol");
+  if (bar) {
+    var spy = [];
+    Array.prototype.forEach.call(bar.querySelectorAll('a[href^="#"]'), function (a) {
+      var target = document.getElementById(a.getAttribute("href").slice(1));
+      if (target) spy.push({ link: a, target: target });
+    });
+    var active = null, ticking = false;
+    var update = function () {
+      ticking = false;
+      var line = window.innerHeight * 0.4, current = null;
+      spy.forEach(function (s) { if (s.target.getBoundingClientRect().top <= line) current = s; });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) current = spy[spy.length - 1];
+      if (current === active) return;
+      active = current;
+      spy.forEach(function (s) {
+        if (s === current) s.link.setAttribute("aria-current", "location");
+        else s.link.removeAttribute("aria-current");
+      });
+      if (current && bar.scrollWidth > bar.clientWidth) {
+        bar.scrollTo({ left: current.link.offsetLeft - bar.offsetLeft - 16, behavior: "smooth" });
+      }
+    };
+    var request = function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    window.addEventListener("scroll", request, { passive: true });
+    window.addEventListener("resize", request);
+    update();
+  }
+
   // Enlarge images in a native <dialog>; links still open the image without JS
   var links = document.querySelectorAll("a[data-zoom]");
   if (links.length && typeof HTMLDialogElement === "function") {
