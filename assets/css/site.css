@@ -97,7 +97,7 @@ ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
 :focus-visible { outline: 2px solid var(--shu); outline-offset: 3px; border-radius: 2px; }
 ::selection { background: var(--shu); color: var(--paper); }
 
-[lang="ja"] { font-family: var(--ja); font-feature-settings: "palt" 1; letter-spacing: 0.04em; line-break: strict; word-break: auto-phrase; }
+[lang="ja"], [lang="zh-Hant"] { font-family: var(--ja); font-feature-settings: "palt" 1; letter-spacing: 0.04em; line-break: strict; word-break: auto-phrase; }
 
 .visually-hidden {
   position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
@@ -288,6 +288,7 @@ figcaption .mono, .caption .mono { flex: none; color: var(--shu); font-size: .7r
 .hero { padding-top: clamp(3rem, 8vw, 7rem); padding-bottom: clamp(3.5rem, 7vw, 6rem); }
 .hero__text { grid-column: 1 / span 7; align-self: end; }
 .hero__ja { margin-top: 1.25rem; font-size: 1.05rem; color: var(--sugi); }
+.hero__sep { margin-inline: .75em; color: var(--koji); }
 .hero .lede { margin-top: clamp(1.75rem, 3.5vw, 2.75rem); max-width: 22ch; }
 .hero__body { margin-top: 1.4rem; max-width: 34rem; color: var(--ink-soft); }
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem 2rem; margin-top: 2.25rem; }
