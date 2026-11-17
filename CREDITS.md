@@ -30,6 +30,7 @@ The licence texts are in `assets/fonts/OFL-*.txt`.
 |---|---|---|
 | `assets/img/brand/seal.svg`, `assets/favicon.svg`, `assets/favicon.ico`, `assets/apple-touch-icon.png` | Drawn for this site. The ルーサー glyph outlines come from Shippori Mincho B1 Bold (OFL 1.1, which allows embedding glyph outlines in artwork). | © Luther Williamson |
 | `assets/img/brand/rings.svg` | Drawn for this site | © Luther Williamson |
+| `assets/img/brand/lowpoly.svg` | Generated for this site (low-poly wireframe background for the Games section) | © Luther Williamson |
 | `assets/img/og/home.jpg`, `assets/img/og/sake.jpg` | Composed for this site from the photographs below and the fonts above | © Luther Williamson |
 
 ## Photographs

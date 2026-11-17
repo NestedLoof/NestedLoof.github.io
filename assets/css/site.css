@@ -181,9 +181,14 @@ h1 em, h2 em, h3 em { font-style: italic; font-weight: 330; }
   content: ""; position: absolute; left: 0; right: 0; bottom: .25rem; height: 1px;
   background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .25s ease;
 }
-.site-nav a:hover::after, .site-nav a[aria-current="page"]::after { transform: scaleX(1); }
-.site-nav .nav-sake { color: var(--shu); }
-.site-nav .nav-sake::before { content: ""; width: .42rem; height: .42rem; background: var(--shu); border-radius: 1px; transform: rotate(45deg); }
+.site-nav a:hover::after { transform: scaleX(1); }
+/* Current page or section: vermilion with a diamond (set by aria-current; the homepage updates it on scroll) */
+.site-nav a::before {
+  content: ""; position: absolute; left: -.85rem; top: 50%; width: .42rem; height: .42rem; margin-top: -.21rem;
+  background: var(--shu); border-radius: 1px; transform: rotate(45deg) scale(0); transition: transform .2s ease;
+}
+.site-nav a[aria-current] { color: var(--shu); }
+.site-nav a[aria-current]::before { transform: rotate(45deg) scale(1); }
 
 @media (max-width: 759px) {
   .js .nav-toggle {
@@ -208,6 +213,7 @@ h1 em, h2 em, h3 em { font-style: italic; font-weight: 330; }
   .site-nav li { border-top: 1px solid var(--rule); }
   .site-nav a { display: flex; padding-block: .95rem; font-family: var(--serif); font-size: 1.5rem; font-weight: 380; }
   .site-nav a::after { display: none; }
+  .site-nav a::before { left: auto; right: .35rem; }
   .no-js .site-nav ul, html:not(.js) .site-nav ul { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
 }
 
@@ -375,6 +381,46 @@ figcaption .mono, .caption .mono { flex: none; color: var(--shu); font-size: .7r
 .ledger-list .l-title { font-family: var(--serif); font-size: 1.45rem; line-height: 1.2; }
 .ledger-list .l-desc { color: var(--ink-soft); margin-top: .35rem; }
 .ledger-list .l-desc .tags { margin-top: .75rem; }
+
+/* Games band: deep indigo, rice-straw accent, low-poly wireframe ---------- */
+.games {
+  --g-bg: #18202D; --g-raised: #111824; --g-text: #F5F0E6; --g-soft: #B7C0CC; --g-line: rgba(205,185,143,.22);
+  position: relative; isolation: isolate; overflow: hidden;
+  background: var(--g-bg); color: var(--g-text); padding-block: var(--section);
+}
+.band-night + .games { margin-top: clamp(1.25rem, 2.5vw, 2rem); }
+.games::before {
+  content: ""; position: absolute; z-index: -1; top: 0; right: 0; width: min(1200px, 120vw); aspect-ratio: 5 / 3;
+  background: url("/assets/img/brand/lowpoly.svg") right top / 100% auto no-repeat; opacity: .16;
+  -webkit-mask-image: radial-gradient(ellipse 85% 85% at 100% 0%, #000 25%, transparent 75%);
+  mask-image: radial-gradient(ellipse 85% 85% at 100% 0%, #000 25%, transparent 75%);
+}
+.games h2, .games h3 { color: var(--g-text); }
+.games .muted, .games p { color: var(--g-soft); }
+.games .work-intro p.muted { color: var(--g-soft); }
+.games .sec-num, .games .mono { color: var(--g-soft); }
+.games .sec-num span:first-child { color: var(--koji); }
+.games .project__meta span:first-child { color: var(--koji); }
+/* Screenshots framed like a 3D viewport: dark bezel with corner marks */
+.games .mat {
+  background: var(--g-raised); box-shadow: 0 0 0 1px var(--g-line);
+  --c: var(--koji); --l: 14px;
+  background-image:
+    linear-gradient(var(--c), var(--c)), linear-gradient(var(--c), var(--c)),
+    linear-gradient(var(--c), var(--c)), linear-gradient(var(--c), var(--c)),
+    linear-gradient(var(--c), var(--c)), linear-gradient(var(--c), var(--c)),
+    linear-gradient(var(--c), var(--c)), linear-gradient(var(--c), var(--c));
+  background-repeat: no-repeat;
+  background-size: var(--l) 1px, 1px var(--l), var(--l) 1px, 1px var(--l), var(--l) 1px, 1px var(--l), var(--l) 1px, 1px var(--l);
+  background-position: 0 0, 0 0, 100% 0, 100% 0, 0 100%, 0 100%, 100% 100%, 100% 100%;
+}
+.games .zoom::after { background: var(--koji); color: var(--ink); }
+.games .tags li { background: transparent; border-color: var(--g-line); color: #D5DAE1; }
+.games .ledger-list { border-top-color: var(--koji); }
+.games .ledger-list > li { border-bottom-color: rgba(245,240,230,.14); }
+.games .ledger-list .l-when { color: var(--koji); }
+.games .ledger-list .l-desc { color: var(--g-soft); }
+.games a:focus-visible { outline-color: var(--koji); }
 
 /* About */
 .about__text { grid-column: 1 / span 5; }
@@ -593,7 +639,8 @@ figcaption .mono, .caption .mono { flex: none; color: var(--shu); font-size: .7r
 @media print {
   .site-header, .nav-toggle, .chapters, .skip-link { display: none !important; }
   body { background: #fff; }
-  .band-night, .contact, .site-footer { background: #fff; color: #000; }
+  .band-night, .games, .contact, .site-footer { background: #fff; color: #000; }
+  .games::before { display: none; }
 }
 
 /* Facts strip: three entries; on small screens the sake entry spans the full width */

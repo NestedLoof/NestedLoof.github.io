@@ -32,6 +32,31 @@
     onScroll();
   }
 
+  // Homepage: mark the nav link for the section in view (aria-current="location")
+  var spy = [];
+  Array.prototype.forEach.call(document.querySelectorAll('.site-nav a[href^="/#"]'), function (a) {
+    var target = location.pathname === "/" && document.getElementById(a.getAttribute("href").slice(2));
+    if (target) spy.push({ link: a, target: target });
+  });
+  if (spy.length) {
+    var ticking = false;
+    var update = function () {
+      ticking = false;
+      var line = window.innerHeight * 0.35, current = null;
+      var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      spy.forEach(function (s) { if (s.target.getBoundingClientRect().top <= line) current = s; });
+      if (atBottom) current = spy[spy.length - 1];
+      spy.forEach(function (s) {
+        if (s === current) s.link.setAttribute("aria-current", "location");
+        else s.link.removeAttribute("aria-current");
+      });
+    };
+    var request = function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    window.addEventListener("scroll", request, { passive: true });
+    window.addEventListener("resize", request);
+    update();
+  }
+
   // Enlarge images in a native <dialog>; links still open the image without JS
   var links = document.querySelectorAll("a[data-zoom]");
   if (links.length && typeof HTMLDialogElement === "function") {
