@@ -4,7 +4,8 @@ This is Luther Williamson's personal website. It's plain static HTML, CSS and a 
 
 ## Structure
 ```
-index.html          Homepage (/)
+index.html          Homepage (/): introduction, sake and games teasers, about, contact
+games/index.html    Games, 3D and software (/games/)
 sake/index.html     Japanese sake section (/sake/)
 404.html            Not-found page
 assets/css/site.css Design system: tokens, layout, components (one file)
@@ -16,7 +17,7 @@ CREDITS.md          Asset & licence register: update it whenever you add an asse
 
 ## Conventions
 - **Always use root-relative URLs** (`/assets/...`, `/sake/`). They work the same from every page, however deeply nested.
-- Pages share the same header and footer markup. If you change one, change it in `index.html`, `sake/index.html` and `404.html`.
+- Pages share the same header and footer markup. If you change one, change it in `index.html`, `games/index.html`, `sake/index.html` and `404.html`. Mark the current page's nav link with `aria-current="page"`.
 - Use colours, fonts and spacing from the tokens at the top of `site.css`. Don't hard-code new values.
 - Japanese text goes in an element with `lang="ja"`. The Japanese font is a **subset**, so adding new Japanese characters means regenerating `shippori-mincho-subset.woff2`. Until then, those characters fall back to the system mincho font.
 - Images: crop and resize to WebP at a few widths (for example 640/1280/1920), strip metadata, set `width`/`height`, and use `loading="lazy"` below the fold.
