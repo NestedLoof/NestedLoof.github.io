@@ -597,7 +597,9 @@ figcaption .mono, .caption .mono { flex: none; color: var(--shu); font-size: .7r
 .label-panel__note { margin-top: auto; padding-top: 1.5rem; font-size: .82rem; color: var(--ink-soft); }
 
 .recognition__photos { margin-top: clamp(3rem, 6vw, 5rem); align-items: end; }
-.recognition__photos figure { grid-column: 1 / span 9; }
+.recognition__photos figure { grid-column: 3 / span 8; }
+.recognition__photos figcaption { justify-content: center; }
+@media (max-width: 899px) { .recognition__photos figure { margin-inline: auto; } }
 
 /* Tastings */
 .tastings__head { grid-column: 1 / span 7; }
