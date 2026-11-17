@@ -221,6 +221,24 @@ h1 em, h2 em, h3 em { font-style: italic; font-weight: 330; }
   .no-js .site-nav ul, html:not(.js) .site-nav ul { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
 }
 
+/* Games page: the header joins the indigo theme */
+.page-games .site-header { background: rgba(24, 32, 45, .95); }
+@supports (backdrop-filter: blur(8px)) { .page-games .site-header { background: rgba(24, 32, 45, .84); } }
+.page-games .site-header.is-scrolled { border-bottom-color: rgba(245, 240, 230, .14); }
+.page-games .site-header:has(.site-nav.is-open) { background: #18202D; border-bottom-color: rgba(245, 240, 230, .14); }
+.page-games .brand__name, .page-games .site-nav a { color: var(--paper); }
+.page-games .site-nav a[aria-current] { color: var(--koji); }
+.page-games .site-nav a::before { background: var(--koji); }
+.page-games .site-nav .nav-contact { border-color: rgba(245, 240, 230, .7); }
+.page-games .site-nav .nav-contact:hover { background: var(--paper); color: var(--ink); }
+.page-games .nav-toggle { color: var(--paper); border-color: rgba(245, 240, 230, .7); }
+.page-games .site-nav li { border-top-color: rgba(245, 240, 230, .14); }
+.page-games :focus-visible { outline-color: var(--koji); }
+@media (max-width: 759px) {
+  .page-games .site-nav .nav-contact { border: 0; }
+  .page-games .site-nav .nav-contact:hover { background: none; color: var(--koji); }
+}
+
 /* 7. Buttons & links ------------------------------------------------------ */
 .btn {
   display: inline-flex; align-items: center; gap: .75rem;
@@ -524,6 +542,7 @@ figcaption .mono, .caption .mono { flex: none; color: var(--shu); font-size: .7r
 .about__text { grid-column: 1 / span 5; }
 .about__text .prose { margin-top: 1.75rem; }
 .about__cv { margin-top: 2rem; }
+.about__photo { margin: 2.5rem 0 0; max-width: 15rem; }
 .about__timeline { grid-column: 7 / span 6; }
 @media (max-width: 899px) { .about__timeline { margin-top: 3.5rem; } }
 .timeline + .timeline { margin-top: 3rem; }
@@ -551,14 +570,18 @@ figcaption .mono, .caption .mono { flex: none; color: var(--shu); font-size: .7r
   .sake-hero__figure .tate { display: none; }
 }
 
-.chapters { border-block: 1px solid var(--ink); }
-.chapters ol { display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; }
-.chapters li { flex: 1 1 auto; }
-.chapters a { display: flex; gap: .7rem; align-items: baseline; padding: 1rem 1.25rem 1rem 0; text-decoration: none; font-size: .95rem; white-space: nowrap; }
-.chapters a .mono { color: var(--shu); font-size: .68rem; }
-.chapters a:hover { color: var(--shu); }
-@media (max-width: 759px) {
-  .chapters ol { display: grid; grid-template-columns: 1fr 1fr; }
+.chapters {
+  position: sticky; top: var(--header-h); z-index: 40;
+  border-block: 1px solid var(--ink); background: rgba(245, 240, 230, .96);
+}
+.chapters ol { display: flex; list-style: none; padding: 0; margin: 0; overflow-x: auto; scrollbar-width: none; }
+.chapters ol::-webkit-scrollbar { display: none; }
+.chapters li { flex: 1 0 auto; }
+.chapters a { position: relative; display: flex; align-items: baseline; padding: .85rem 1.25rem .85rem 0; text-decoration: none; font-size: .95rem; white-space: nowrap; }
+.chapters a:hover, .chapters a[aria-current] { color: var(--shu); }
+.chapters a::after { content: ""; position: absolute; left: 0; right: 1.25rem; bottom: -1px; height: 2px; background: var(--shu); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+.chapters a[aria-current]::after { transform: scaleX(1); }
+html:has(.chapters) { scroll-padding-top: calc(var(--header-h) + 4.25rem); }
   .chapters li { border-bottom: 1px solid var(--rule); }
   .chapters li:nth-last-child(-n+2) { border-bottom: 0; }
 }
@@ -706,6 +729,17 @@ figcaption .mono, .caption .mono { flex: none; color: var(--shu); font-size: .7r
 .contact__list .val { font-family: var(--serif); font-size: clamp(1.15rem, 2vw, 1.55rem); overflow-wrap: anywhere; }
 .contact__list a:hover .val { color: var(--shu-light); }
 @media (max-width: 479px) { .contact__list a { grid-template-columns: 1fr auto; } .contact__list .mono { grid-column: 1 / -1; } }
+
+/* Light variant (homepage, where it follows the dark games band) */
+.contact--light { background: var(--paper); color: var(--ink); }
+.contact--light h2 { color: var(--ink); }
+.contact--light .sec-num { color: var(--ink-soft); }
+.contact--light .sec-num span:first-child { color: var(--shu); }
+.contact--light .contact__head p { color: var(--ink-soft); }
+.contact--light .contact__list { border-top-color: var(--ink); }
+.contact--light .contact__list a { color: var(--ink); border-bottom-color: var(--rule); }
+.contact--light .contact__list .mono { color: var(--ink-soft); }
+.contact--light .contact__list a:hover .val { color: var(--shu); }
 
 .site-footer { background: var(--ai); color: #AEB6C2; border-top: 1px solid rgba(245,240,230,.15); }
 .site-footer__inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem 2rem; padding-block: 1.75rem; font-size: .85rem; }
