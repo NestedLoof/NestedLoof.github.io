@@ -460,6 +460,12 @@ figcaption .mono, .caption .mono { flex: none; color: var(--shu); font-size: .7r
 .project--plain { align-items: start; padding-top: clamp(2.5rem, 5vw, 3.5rem); border-top: 1px solid rgba(245,240,230,.14); }
 .project__text .link-arrow { color: var(--g-text, inherit); }
 .credits { margin: 0; border-top: 1px solid var(--koji); }
+.project__text .credits { margin-top: 1.5rem; }
+.project__text .credits > div { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-block: .6rem; }
+.project__text .credits dd { margin: 0; font-size: 1.05rem; text-align: right; }
+.media-note { margin-top: .8rem; font-size: .66rem; }
+.project__still { margin-top: 1.75rem; }
+.yt .ratio, .zoom .ratio { display: block; }
 .credits > div { padding-block: 1rem; border-bottom: 1px solid rgba(245,240,230,.14); }
 .credits dt { color: var(--koji) !important; font-size: .68rem; }
 .credits dd { margin: .35rem 0 0; font-family: var(--serif); font-size: 1.3rem; color: var(--g-text); }
