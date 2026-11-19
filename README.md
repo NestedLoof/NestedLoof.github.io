@@ -2,6 +2,8 @@
 
 This is Luther Williamson's personal website. It's plain static HTML, CSS and a little vanilla JavaScript, served by GitHub Pages from the root of `main`. The custom domain is set in `CNAME`; don't edit or remove it.
 
+**Working on the site (human or Claude)? Start with [CLAUDE.md](CLAUDE.md)**, which links to the design, content, workflow, decisions and roadmap notes in [docs/](docs/).
+
 ## Structure
 ```
 index.html          Homepage (/): introduction, sake and games teasers, about, contact
@@ -13,6 +15,10 @@ assets/js/site.js   Mobile nav, image dialog, gentle reveal (no dependencies)
 assets/fonts/       Self-hosted WOFF2 subsets + OFL licences
 assets/img/         brand/, home/, sake/, work/, og/ (responsive WebP)
 CREDITS.md          Asset & licence register: update it whenever you add an asset
+CLAUDE.md           Entry point for anyone (or any Claude session) changing the site
+docs/               design.md, content.md, workflow.md, decisions.md, roadmap.md
+tools/              Build scripts: fonts, images, seal, link-preview images (see tools/README.md)
+googlea...html      Google Search Console verification file: leave in place
 ```
 
 ## Conventions

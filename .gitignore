@@ -1,0 +1,4 @@
+# Large source files for the build scripts in tools/ (see tools/README.md)
+tools/fontsrc/
+tools/pylib/
+__pycache__/

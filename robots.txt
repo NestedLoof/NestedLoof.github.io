@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /docs/
+Disallow: /tools/
+Disallow: /CLAUDE.md
 
 Sitemap: https://lutherwilliamson.co.uk/sitemap.xml
