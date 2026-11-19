@@ -1,4 +1,4 @@
-/* lutherwilliamson.co.uk — small progressive enhancements. Original code, no dependencies. */
+/* lutherwilliamson.co.uk — small progressive enhancements. Written by Luther Williamson, based off Emilia Williamson's portfolio website template. No dependencies. */
 (function () {
   "use strict";
   var root = document.documentElement;
